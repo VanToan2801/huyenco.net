@@ -6,10 +6,10 @@ node_modules/
 .env.local
 .env.*.local
 
-# Database files
-*.db
-*.db-wal
-*.db-shm
+# Database files (Unblocked for demo)
+# *.db
+# *.db-wal
+# *.db-shm
 
 # Build output
 dist/
