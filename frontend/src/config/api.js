@@ -10,9 +10,10 @@ const isProduction = window.location.hostname !== 'localhost' &&
 
 
 // API Base URL
-const API_HOST = isProduction
-    ? 'https://backend-production-92f4.up.railway.app'
-    : ''; // Use relative path in development (proxied by Vite)
+// Priority: Environment Variable > Production Domain Fallback > empty (dev proxy)
+const API_HOST = import.meta.env.VITE_API_URL || (isProduction
+    ? 'https://huyenco-backend.onrender.com' // Fallback for production if VITE_API_URL is missing
+    : ''); // Use relative path in development (proxied by Vite)
 
 // If you want to use a subdomain like api.huyencobattu.com, uncomment below:
 // const API_HOST = isProduction 

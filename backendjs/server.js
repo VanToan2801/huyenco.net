@@ -229,7 +229,8 @@ process.once("SIGUSR2", () => {
     console.log("[STARTUP] Database initialized successfully.");
 
     app.listen(PORT, "0.0.0.0", () => {
-      console.log(`🚀 BaZi Mega-Evolution API running on port ${PORT}`);
+      console.log(`🚀 BaZi Mega-Evolution API running in ${process.env.NODE_ENV || 'development'} mode`);
+      console.log(`📡 Listening on port: ${PORT}`);
       console.log(`📚 API Docs: http://localhost:${PORT}/api/docs`);
       console.log(`💾 SQLite Database: data/bazi_consultant.db`);
 
