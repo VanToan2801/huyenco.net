@@ -277,7 +277,7 @@ const BirthInput = ({ onAnalyze, loading, automationData }) => {
                         />
                     </div>
 
-                    <div className="input-group" style={{ display: 'none' }}>
+                    <div className="input-group">
                         <label>Giới tính</label>
                         <select name="gender" value={formData.gender} onChange={handleChange} className="glass-input">
                             <option value="Nam">Nam Mệnh</option>
@@ -285,7 +285,7 @@ const BirthInput = ({ onAnalyze, loading, automationData }) => {
                         </select>
                     </div>
 
-                    <div className="input-group date-picker-trigger-group full-width">
+                    <div className="input-group date-picker-trigger-group">
                         <label>Ngày sinh (Dương lịch)</label>
                         <button
                             type="button"
@@ -303,7 +303,7 @@ const BirthInput = ({ onAnalyze, loading, automationData }) => {
                         )}
                     </div>
 
-                    <div className="input-group tooltip-wrapper full-width" style={{ display: 'none' }}>
+                    <div className="input-group tooltip-wrapper full-width">
                         <label>Giờ sinh</label>
                         <select name="hour" value={formData.hour} onChange={handleChange} className="glass-input">
                             <option value={0}>Tý (子) • 23:00 - 01:00</option>
