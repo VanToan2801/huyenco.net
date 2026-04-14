@@ -10,10 +10,10 @@ const isProduction = window.location.hostname !== 'localhost' &&
 
 
 // API Base URL
-// Priority: Environment Variable > Production Domain Fallback > empty (dev proxy)
-const API_HOST = import.meta.env.VITE_API_URL || (isProduction
-    ? 'https://huyenco-backend.onrender.com' // Fallback for production if VITE_API_URL is missing
-    : ''); // Use relative path in development (proxied by Vite)
+// Đã fix cứng sang Render để tránh dính link Railway cũ trên Vercel
+const API_HOST = isProduction
+    ? 'https://huyenco-backend.onrender.com' 
+    : (import.meta.env.VITE_API_URL || '');
 
 // If you want to use a subdomain like api.huyencobattu.com, uncomment below:
 // const API_HOST = isProduction 
