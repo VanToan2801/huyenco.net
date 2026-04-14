@@ -285,7 +285,7 @@ const BirthInput = ({ onAnalyze, loading, automationData }) => {
                         </select>
                     </div>
 
-                    <div className="input-group date-picker-trigger-group">
+                    <div className="input-group date-picker-trigger-group col-span-2">
                         <label>Ngày sinh (Dương lịch)</label>
                         <button
                             type="button"

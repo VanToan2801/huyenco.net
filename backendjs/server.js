@@ -226,10 +226,13 @@ process.once("SIGUSR2", () => {
 (async () => {
   try {
     await dbService.init();
+    console.log(">>> BACKEND PHIÊN BẢN MỚI 1.0.2 - ĐÃ FIX LỖI API KEY <<<");
+    console.log("[DEBUG] OpenRouter Key Length:", process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.length : "MISSING");
     console.log("[STARTUP] Database initialized successfully.");
 
     app.listen(PORT, "0.0.0.0", () => {
-      console.log(`🚀 BaZi Mega-Evolution API running on port ${PORT}`);
+      console.log(`🚀 BaZi Mega-Evolution API running in ${process.env.NODE_ENV || 'development'} mode`);
+      console.log(`📡 Listening on port: ${PORT}`);
       console.log(`📚 API Docs: http://localhost:${PORT}/api/docs`);
       console.log(`💾 SQLite Database: data/bazi_consultant.db`);
 

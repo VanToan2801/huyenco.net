@@ -1003,6 +1003,10 @@ select option,
   grid-column: span 3;
 }
 
+.col-span-2 {
+  grid-column: span 2;
+}
+
 .start-button {
   margin-top: 2rem;
   width: 100%;

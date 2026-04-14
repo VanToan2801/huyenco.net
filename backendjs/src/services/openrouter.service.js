@@ -1,14 +1,17 @@
-/**
- * OpenRouter AI Service for BaZi Consultant
- * Uses DeepSeek model via OpenRouter API
- */
+require('dotenv').config();
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "gpt-4o-mini";
+
+if (!OPENROUTER_API_KEY) {
+    throw new Error("OPENROUTER_API_KEY is not configured");
+}
 
 class OpenRouterService {
     constructor() {
-        this.apiKey = process.env.OPENROUTER_API_KEY;
-        this.model = process.env.OPENROUTER_MODEL || 'deepseek/deepseek-chat';
+        this.apiKey = OPENROUTER_API_KEY;
+        this.model = OPENROUTER_MODEL;
         this.maxRetries = 3;
         this.timeout = 60000; // 60 seconds timeout
     }
