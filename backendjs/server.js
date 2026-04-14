@@ -226,6 +226,8 @@ process.once("SIGUSR2", () => {
 (async () => {
   try {
     await dbService.init();
+    console.log(">>> BACKEND PHIÊN BẢN MỚI 1.0.2 - ĐÃ FIX LỖI API KEY <<<");
+    console.log("[DEBUG] OpenRouter Key Length:", process.env.OPENROUTER_API_KEY ? process.env.OPENROUTER_API_KEY.length : "MISSING");
     console.log("[STARTUP] Database initialized successfully.");
 
     app.listen(PORT, "0.0.0.0", () => {
