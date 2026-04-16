@@ -224,6 +224,16 @@ const BirthInput = ({ onAnalyze, loading, automationData }) => {
                         >
                             📜 Lịch sử
                         </button>
+                        {user.is_admin === 1 && (
+                            <button
+                                className="user-action-btn admin-btn"
+                                onClick={() => window.location.href = '/admin'}
+                                title="Truy cập Trang Quản Trị"
+                                style={{ backgroundColor: 'rgba(226, 192, 68, 0.2)', color: 'var(--accent-gold)' }}
+                            >
+                                🛡️ Admin
+                            </button>
+                        )}
                         <button
                             className="profile-edit-btn"
                             onClick={() => setShowProfileModal(true)}

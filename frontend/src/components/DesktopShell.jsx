@@ -160,6 +160,11 @@ const DesktopShell = ({ children, hasData, onClearData }) => {
                                 <p>💎 {user?.credits || 0} Linh Thạch</p>
                             </div>
                             <hr />
+                            {user?.is_admin === 1 && (
+                                <button className="dropdown-item" onClick={() => { window.location.href = '/admin'; setShowDropdown(false); }} style={{ color: 'var(--accent-gold)' }}>
+                                    <span className="item-icon">🛡️</span> Trang Quản Trị
+                                </button>
+                            )}
                             <button className="dropdown-item" onClick={() => { setShowProfileModal(true); setShowDropdown(false); }}>
                                 <span className="item-icon">👤</span> Thông tin tài khoản
                             </button>

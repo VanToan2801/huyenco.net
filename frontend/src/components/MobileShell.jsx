@@ -64,6 +64,11 @@ const StatusBar = () => {
               <span className="credits-value">💎 {user?.credits || 0}</span>
             </div>
             <div className="dropdown-actions">
+              {user?.is_admin === 1 && (
+                <button className="dropdown-btn" onClick={() => { window.location.href = '/admin'; setShowUserMenu(false); }} style={{ color: 'var(--accent-gold)' }}>
+                  🛡️ Trang Quản Trị
+                </button>
+              )}
               <button className="dropdown-btn" onClick={() => { setShowProfileModal(true); setShowUserMenu(false); }}>
                 👤 Thông tin tài khoản
               </button>
